@@ -76,12 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
               width: MediaQuery.of(context).size.width,
               child: GridView.builder(
                   itemCount: _game.gameImg!.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
                     crossAxisSpacing: 16.0,
                     mainAxisSpacing: 16.0,
                   ),
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             _game.matchCheck.clear();
                           } else {
                             print("false");
-                            Future.delayed(Duration(milliseconds: 500), () {
+                            Future.delayed(const Duration(milliseconds: 500), () {
                               print(_game.gameColors);
                               setState(() {
                                 _game.gameImg![_game.matchCheck[0].keys.first] =
@@ -117,13 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       },
                       child: Container(
-                        padding: EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
-                          color: Color(0xFFFFB46A),
+                          color: const Color(0xFFFFB46A),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Center(child: Text(_game.gameImg![index],
-                        style: TextStyle(fontSize: 26,color: Colors.white),)),
+                        style: const TextStyle(fontSize: 26,color: Colors.white),)),
                       ),
                     );
                   }))
